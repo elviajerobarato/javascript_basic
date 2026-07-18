@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<style>
+#botones {
+border:thin solid silver;
+padding:0.5em;
+	}
+
+#informacion {
+border:thin solid red;
+padding:0.5em;
+	}
+
+
+
+</style>
+
+<body>
+
+<div id="informacion"> </div>
+
+<div id="botones">
+<button type="button" id="boton1" name="boton1">Botón1</button>	
+<button type="button" id="boton2" name="boton1">Botón2</button>
+
+</div>
+
+
+
+
+<script>
+
+function crearObjetos() {
+}
+
+
+let divInformacion = document.getElementById("informacion");
+let boton1 = document.getElementById("boton1");
+let boton2 = document.getElementById("boton2");
+
+
+
+
+boton1.addEventListener('click', function(){
+	divInformacion.style.backgroundColor="red";
+	divInformacion.innerHTML+="Has pulsado el botón1 ";
+
+});
+
+
+
+boton2.addEventListener('click', function(){
+	divInformacion.style.backgroundColor="yellow";
+	divInformacion.innerHTML+="Has pulsado el botón2 ";
+
+});
+
+
+
+
+
+
+//document.getElementById("demo").innerHTML = "Texto dentro de id \"demo\" ";
+</script>
+
+</body>
+</html>

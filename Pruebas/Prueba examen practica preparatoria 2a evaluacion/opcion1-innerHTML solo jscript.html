@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+'use strict';
+
+
+// Debes encapsular el código dentro del evento window.onload
+
+
+window.onload= function() {
+console.log("texto");
+
+// Crea un <div id=”botones”> y añades los estilos: border:thin solid silver; padding:0.5em
+
+// Crea un <div id=”informacion”> y añades los estilos border:thin solid red; padding:0.5em
+
+
+document.body.innerHTML="";
+
+
+
+// Crea dos botones uno con id=”boton1” y con el texto Botón1 dentro del <div id=”botones”> 
+// otro con id=”boton2” y con el texto Botón2 dentro del <div id=”botones”>
+
+
+document.body.innerHTML+="<div id=\"botones\"><p><button id=\"boton1\" type=\"button\" name=\"boton1\">Botón1</button></p><p><button id=\"boton2\" type=\"button\" name=\"boton2\">Botón2</button></p></div>";
+document.body.innerHTML+="";
+
+
+document.body.innerHTML+="<div id=\"informacion\">Aquí va la informacíon</div>";
+
+let divInformacion=document.getElementById("informacion");
+divInformacion.style.border="thin solid red";
+divInformacion.style.padding="0.5em";
+
+let divBotones=document.getElementById("botones");
+divBotones.style.border="thin solid silver";
+divBotones.style.padding="0.5em";
+
+// Añade un manejador de eventos al botón 1 de forma que al hacer click muestre el mensaje, “has pulsado el botón 1” (en un párrafo con fondo rojo), // añadiéndo el texto a lo que haya en el <div id=”informacion”>
+
+// Añade un manejador de eventos al botón 2 de forma que al hacer click muestre el mensaje “has pulsado el botón 2” (en un párrafo con fondo amarillo), // añadiendo el texto a lo que haya en el <div id=”informacion”>
+
+
+let boton1=document.getElementById("boton1");
+boton1.addEventListener('click', function() {
+divInformacion.innerHTML="<p>Has pulsado el botón1</p>";
+divInformacion.style.backgroundColor="red";
+});
+
+
+
+let boton2=document.getElementById("boton2");
+boton2.addEventListener('click', function() {
+divInformacion.innerHTML="<p>Has pulsado el botón2</p>";
+divInformacion.style.backgroundColor="yellow";
+});
+
+
+
+
+
+} // fin function()
+
+//document.getElementById("demo").innerHTML = "Texto dentro de id \"demo\" ";
+</script>
+
+</body>
+</html>

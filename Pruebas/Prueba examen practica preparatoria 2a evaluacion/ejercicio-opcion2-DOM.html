@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<style>
+#botones {
+border:thin solid silver;
+padding:0.5em;
+	}
+
+#informacion {
+border:thin solid red;
+padding:0.5em;
+	}
+
+
+
+</style>
+
+<body>
+
+<div id="informacion"> </div>
+
+<div id="botones">
+<!-- 
+<button type="button" id="boton1" name="boton1">Botón1</button>	
+<button type="button" id="boton2" name="boton1">Botón2</button>
+-->
+</div>
+
+
+
+
+<script>
+
+function crearObjetos() {
+}
+
+
+let divInformacion = document.getElementById("informacion");
+
+/*
+let boton1 = document.getElementById("boton1");
+let boton2 = document.getElementById("boton2");
+
+
+
+boton1.addEventListener('click', function(){
+	divInformacion.style.backgroundColor="red";
+	divInformacion.innerHTML="Has pulsado el botón1 ";
+
+});
+
+
+
+boton2.addEventListener('click', function(){
+	divInformacion.style.backgroundColor="yellow";
+	divInformacion.innerHTML="Has pulsado el botón2 ";
+
+});
+*/
+
+
+let divbotones= document.getElementById("botones");
+
+
+
+// 1. Creamos los botones
+let boton1 = document.createElement("button");
+let boton2 = document.createElement("button");
+// 2. Creamos su contenido
+let contenidoBoton1 = document.createTextNode("Botón1");
+let contenidoBoton2 = document.createTextNode("Botón2");
+// 3. Añadimos el contenido
+boton1.appendChild(contenidoBoton1);
+boton2.appendChild(contenidoBoton2);
+boton1.id = "boton1";
+boton2.id = "boton2";
+// 4. Añadimos el párrafo
+divbotones.appendChild(boton1);
+divbotones.appendChild(boton2);
+
+
+boton1.onclick= function() {
+	divInformacion.style.backgroundColor = "red";
+	divInformacion.innerHTML="Has pulsado el botón1 ";
+	}
+
+boton2.onclick= function() {
+	divInformacion.style.backgroundColor = "yellow";
+	divInformacion.innerHTML="Has pulsado el botón2 ";
+	}
+
+
+
+//document.getElementById("demo").innerHTML = "Texto dentro de id \"demo\" ";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio4</title>
+	</head>
+	<body>
+
+
+<form action="#" name="form1" id="form1">
+<label>
+Usuario:<input type="text" name="usuario" id="usuario" required>
+</label><br>
+<label>
+Password:
+<input type="password" name="pass1" id="pass1" required>
+</label><br>
+ <label>Provincia:</label>
+<select name="provincia" id="provincia">
+<option value="" selected>Selecciona una provincia:</option>
+<option value="Alicante">Alicante</option>
+<option value="Valencia">Valencia</option>
+<option value="Castellón">Castellón</option>
+</select>
+<br>
+<input type="submit" value="enviar" id="enviar">
+</form>
+
+
+
+<div id="salida"></div>
+
+
+<script>
+
+let button=document.getElementById("enviar");
+document.form1.addEventListener("submit", validar);
+function validar(evento){
+
+let formularioCorrecto = true;
+
+let divSalida=document.getElementById("salida");
+divSalida.innerHTML+="";
+
+let usuario=document.form1.usuario.value;
+if (/^[a-zA-Z]{6,}$/.test(usuario) == false) {
+	divSalida.innerHTML+="Tu usuario es incorrecto <br>";
+	formularioCorrecto = false;
+	} else {
+	divSalida.innerHTML+="Tu usuario es: " + usuario + "<br>";
+}
+
+
+
+
+let password=document.form1.pass1.value;
+if (/^[a-zA-Z]{6,}$/.test(password) == false) {
+	divSalida.innerHTML+="Tu password es incorrecto <br>";
+	formularioCorrecto = false;
+	} else {
+	divSalida.innerHTML+="Tu password es: " + password + "<br>";
+	}
+
+
+
+	let provincia=document.form1.provincia.value;
+
+	if (provincia == null || provincia == 0)
+	{
+	divSalida.innerHTML+="Debes elegir una provincia de la lista <br>";
+	formularioCorrecto = false;
+	}else{
+	divSalida.innerHTML+="La provincia es: "+ provincia + "<br>";
+	}
+
+
+//divSalida.innerHTML+="Aquí muestra la salida</br>";
+//divSalida.innerHTML+=login + " " + password + " " + provincia;
+
+
+if (!formularioCorrecto)
+ evento.preventDefault();
+}
+
+
+
+
+</script>
+
+</body>
+</html>

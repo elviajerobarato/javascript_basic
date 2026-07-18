@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio3</title>
+	</head>
+	<body>
+
+
+
+
+
+<script>
+document.body.innerHTML="";
+document.body.innerHTML+="<div id=\"mensajes\"></div>";
+//document.body.innerHTML+="<div id=\"botones\">
+
+//let divbotones = document.getElementById("botones");
+// divbotones.id="botones";
+
+
+document.body.innerHTML+="<div id=\"botones\"><p><button id=\"boton1\" type=\"button\" name=\"boton1\">Botón1</button></p><p><button id=\"boton2\" type=\"button\" name=\"boton2\">Botón2</button></p></div>";
+
+
+let divboton1 = document.getElementById("boton1");
+divboton1.addEventListener('click', function() {
+divmensajes.innerHTML="<p>Has pulsado el botón 1</p>";
+});
+
+
+let divboton2 = document.getElementById("boton2");
+divboton2.addEventListener('click', function() {
+divmensajes.innerHTML="<p>Has pulsado el botón 2</p>";
+});
+
+
+
+let divmensajes = document.getElementById("mensajes");
+// divmensajes.innerHTML+="Aquí van los mensajes";
+
+
+
+
+</script>
+
+</body>
+</html>

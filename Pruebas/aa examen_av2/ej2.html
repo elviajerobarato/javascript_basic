@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio2</title>
+	</head>
+	<body>
+
+
+	<div id="salida"></div>
+
+
+<script>
+
+//Pide al usuario que introduzca un texto
+
+let texto = prompt("Introduce un texto: ");
+
+let divSalida=document.getElementById("salida");
+divSalida.style.backgroundColor="red";
+divSalida.style.border="solid 5px green";
+divSalida.style.width="25%";
+divSalida.innerHTML=""; 
+//divSalida.innerHTML+=texto + "<br><br>";
+
+let array = texto.split(" ");
+console.log(array);
+
+
+let listado="";
+
+for (let i=0; i<array.length; i++){
+	//divSalida.innerHTML+=i+1 + " " + array[i] + "<br>"; 	
+	//divSalida.innerHTML+="<ol>";
+	//divSalida.innerHTML+="<li>" + array[i] + "</li>";
+	listado += "<li>" + array[i] + "</li>";
+	//divSalida.innerHTML+="</ol>";
+	}
+
+
+divSalida.innerHTML+="<ol>" + listado + "</ol>";
+
+
+
+
+
+</script>
+
+</body>
+</html>

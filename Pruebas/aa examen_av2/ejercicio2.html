@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio2</title>
+<script type="text/javascript">
+'use strict'
+window.onload = function() {
+//Pide al usuario que introduzca un texto
+
+let texto = prompt("Introduce un texto: ");
+console.log(texto);
+
+// Separa el texto en las palabras que contenga
+
+let partestexto = texto.split(" ");
+//partestexto = partestexto.join("");
+console.log(partestexto);
+
+
+
+let contenidodivSalida="";
+
+for(let i=0; i < partestexto.length; i++) {
+	contenidodivSalida+=(i+1 + " " + partestexto[i] + " <br>");
+	}
+	
+
+
+
+
+
+// Escribe una lista con cada una de las palabras del texto dentro del <div id=”salida></div> que está en la página
+
+
+
+
+
+
+// Desde el DOM aplica los siguientes estilos al <div id="salida">
+// Fondo rojo - Borde 5px color verde - Ancho 25%
+
+
+let divSalida=document.getElementById("salida");
+divSalida.style.backgroundColor="red";
+divSalida.style.border="5px solid green";
+divSalida.style.width="25%";
+
+divSalida.innerHTML = contenidodivSalida;
+
+}
+</script>
+</head>
+<body>
+
+<div id="salida"></div>
+
+</body>
+</html>

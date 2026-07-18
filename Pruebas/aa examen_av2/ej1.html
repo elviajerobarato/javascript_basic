@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio1</title>
+	</head>
+	<body>
+
+
+	<div id="salida"></div>
+
+
+<script>
+
+let array = [1,2,3,4,5,6,7,8,9];
+
+let totalArray= array.length;
+
+let divSalida=document.getElementById("salida");
+
+divSalida.innerHTML="";
+divSalida.innerHTML+="Aray original: "+ array + "<br>";
+divSalida.innerHTML+="Numeros que componen el array: "+ totalArray + "<br>";
+
+
+//Cuantos números pares hay en el array
+
+let numerosPares = array.filter(function(n){ 
+	return n % 2 == 0;
+});
+
+
+
+console.log(numerosPares);
+divSalida.innerHTML+="Numeros pares: "+ numerosPares.length + " => " + numerosPares + "<br>";
+
+
+
+//Cuantos números impares hay en el array
+
+
+let numerosImpares = array.filter(function(n){ 
+	return n % 2 != 0;
+});
+
+
+console.log(numerosImpares);
+divSalida.innerHTML+="Numeros impares: "+ numerosImpares.length + " => " + numerosImpares + "<br>";
+
+
+//Que diga true si todos los números son mayores que 5 y false en caso contrario
+
+let numerosMayora5 = array.every(function(n) {
+	return n > 5;
+});
+
+let resultado;
+
+if (numerosMayora5 == false){
+	resultado = "NO";
+	}else{
+	resultado = "SI";
+}
+
+
+divSalida.innerHTML+="¿Todos los números son mayores a 5?: "+ resultado + "<br>";
+//Escribir el array del revés
+
+let reverse = array.reverse();
+divSalida.innerHTML+="Array del revés: "+ reverse + "<br>";
+
+</script>
+
+</body>
+</html>

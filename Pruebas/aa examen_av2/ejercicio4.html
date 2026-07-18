@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio4</title>
+	</head>
+	<body>
+<form action="#" name="form1" id="form1">
+<label>Usuario: <input type="text" name="usuario" id="usuario" required> </label><br>
+<label>Password: <input type="password" name="pass" id="pass" required></label><br>
+<label for="provincia">Seleccione provincia</label>
+<br>
+<select id="provincia" name="provincia">
+<option value="">-Seleccionar una provincia-</option>
+<option value="Alicante">Alicante</option>
+<option value="Valencia">Valencia</option>
+<option value="Castellón">Castellón</option>
+</select>
+<br><br>
+<input type="submit" value="Enviar" id="boton">
+</form>
+
+
+<div id="salida"></div>
+
+
+
+<script>
+
+
+
+
+
+let button=document.getElementById("button");
+
+
+document.form1.addEventListener("submit", validarFormulario);
+
+function validarFormulario(evento) {
+
+let divSalida=document.getElementById("salida");
+
+divSalida.innerHTML = "";
+
+let formularioCorrecto = true;
+
+
+// Código para comprobar cada campo
+// Pondríamos "formularioCorrecto" a false si alguno falla
+
+
+// Usuario: campo obligatorio al menos 6 caracteres (mayúsculas y minúsculas)
+// Contraseña: campo obligatorio al menos 6 caracteres (mayúsculas y minúsculas) o dígitos (0-9)
+// Provincia: Lista desplegable donde la primera opción es “selecciona una provincia” 
+
+
+ // Código para comprobar cada campo
+
+	let usuario=document.form1.usuario.value;
+	let password=document.form1.pass.value;
+	let provincia=document.form1.provincia.value;
+
+	if (/^([a-zA-Z]{6,})$/.test(usuario) == false) {
+ 	divSalida.innerHTML+="<p>Usuario incorrecto</p>";
+	formularioCorrecto = false;
+	}else{
+	console.log("usuario");
+	divSalida.innerHTML+="<p>Usuario correcto</p>";
+	}
+
+	if (/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,})$/.test(password) == false) {
+ 	divSalida.innerHTML+="<p>Contraseña incorrecta</p>";
+	formularioCorrecto = false;
+	}else{
+	divSalida.innerHTML+="<p>Contraseña correcta</p>";
+	}
+
+	if (provincia == null || provincia == "") {
+	divSalida.innerHTML+="<p>Provincia incorrecta</p>";
+	formularioCorrecto = false;
+	}else{
+	divSalida.innerHTML+="<p>Provincia correcta</p>"
+	}
+
+	if(formularioCorrecto == true){
+	alert("Formulario enviado correctamente")	
+	}
+
+// Pondríamos "formularioCorrecto" a false si alguno falla
+if (!formularioCorrecto)
+evento.preventDefault();
+}
+
+
+
+//divSalida.innerHTML+="<p>Aquí va el texto de salida</p>";
+
+
+</script>
+
+</body>
+</html>
