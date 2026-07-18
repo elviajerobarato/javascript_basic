@@ -1,0 +1,13 @@
+LM Javascript Tema1 clase1 operadores
+Video Tema1 clase1
+https://www.youtube.com/watch?v=rQOEFVYRtZk
+
+
+
+
+MENÚ PRINCIPAL: https://fxblasco.org/lm/
+HTML: https://fxblasco.org/lm/html/index.html
+CSS: https://fxblasco.org/lm/css/index.html
+JavaScript: https://fxblasco.org/lm/javascript/index.html
+PHP: https://fxblasco.org/lm/php/index.html
+XML: https://fxblasco.org/lm/xml/index.html
